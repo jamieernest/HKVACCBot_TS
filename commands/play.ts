@@ -77,10 +77,8 @@ export default {
 
     if (queue) {
       queue.enqueue(song);
-
-      return (interaction.channel as TextChannel)
-        .send({ content: i18n.__mf("play.queueAdded", { title: song.title, author: interaction.user.id }) })
-        .catch(console.error);
+      if (interaction.replied) return interaction.editReply({ content: i18n.__mf("play.queueAdded", { title: song.title, author: interaction.user.id }) }).catch(console.error);
+      else return interaction.reply({ content: i18n.__mf("play.queueAdded", { title: song.title, author: interaction.user.id }) }).catch(console.error);
     }
 
     const newQueue = new MusicQueue({

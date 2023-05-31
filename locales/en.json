@@ -174,7 +174,10 @@
 		"cooldownMessage": "please wait {time} more second(s) before reusing the `{name}` command.",
 		"errorCommand": "There was an error executing that command."
 	},
-  "leave": {
-    "description": "Leave the current voice channel"
-  }
+  	"leave": {
+    	"description": "Leave the current voice channel"
+	},
+	"restart": {
+		"description": "Restarts the bot"
+	}
 }

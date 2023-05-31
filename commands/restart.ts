@@ -5,7 +5,7 @@ import * as fs from 'fs'
 const restartFile = fs.readFileSync('./restarts.json', 'utf8')
 
 export default {
-    data: new SlashCommandBuilder().setName("leave").setDescription(i18n.__("leave.description")),
+    data: new SlashCommandBuilder().setName("restart").setDescription(i18n.__("restart.description")),
     async execute (interaction: CommandInteraction) {
         if(!interaction.memberPermissions?.has(PermissionsBitField.Flags.ManageMessages) && interaction.user.id != '276584774171230211') return
         let restarts = JSON.parse(restartFile)

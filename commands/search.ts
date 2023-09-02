@@ -35,9 +35,13 @@ export default {
       console.error(error);
 
       interaction.editReply({ content: i18n.__("common.errorCommand") }).catch(console.error);
+      return;
     }
 
-    if (!results) return;
+    if (!results || !results[0]) {
+      interaction.editReply({ content: i18n.__("search.noResults") })
+      return;
+    }
 
     const options = results!.map((video) => {
       return {

@@ -7,9 +7,9 @@ import { canModifyQueue } from "../utils/queue";
 export default {
   data: new SlashCommandBuilder()
     .setName("bump")
-    .setDescription(i18n.__("move.description"))
+    .setDescription(i18n.__("bump.description"))
     .addIntegerOption((option) =>
-      option.setName("bumpfrom").setDescription(i18n.__("bump.args.movefrom")).setRequired(true)
+      option.setName("bumpfrom").setDescription(i18n.__("bump.args.bumpfrom")).setRequired(true)
     ),
   execute(interaction: ChatInputCommandInteraction) {
     const bumpfromArg = interaction.options.getInteger("bumpfrom");
@@ -22,10 +22,10 @@ export default {
     if (!canModifyQueue(guildMemer!)) return;
 
     if (!bumpfromArg)
-      return interaction.reply({ content: i18n.__mf("move.usagesReply", { prefix: bot.prefix }), ephemeral: true });
+      return interaction.reply({ content: i18n.__mf("bump.usagesReply", { prefix: bot.prefix }), ephemeral: true });
 
     if (isNaN(bumpfromArg) || bumpfromArg == 1)
-      return interaction.reply({ content: i18n.__mf("move.usagesReply", { prefix: bot.prefix }), ephemeral: true });
+      return interaction.reply({ content: i18n.__mf("bump.usagesReply", { prefix: bot.prefix }), ephemeral: true });
 
     let song = queue.songs[bumpfromArg - 1];
 

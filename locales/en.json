@@ -37,6 +37,15 @@
 			"moveto": "Slot to move to"
 		}
 	},
+	"bump": {
+		"description": "Bump songs to the top of the queue",
+		"errorNotQueue": "There is no queue.",
+		"usagesReply": "Usage: {prefix}bump <Queue Number>",
+		"result": "<@{author}> 🚚 bumped **{title}** to {index} in the queue.",
+		"args": {
+			"bumpfrom": "Slot to bump from"
+		}
+	},
 	"nowplaying": {
 		"description": "Show now playing song",
 		"errorNotQueue": "There is nothing playing.",

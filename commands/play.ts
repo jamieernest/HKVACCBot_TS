@@ -96,6 +96,5 @@ export default {
     bot.queues.set(interaction.guild!.id, newQueue);
 
     newQueue.enqueue(song);
-    interaction.deleteReply().catch(console.error);
   }
 };
